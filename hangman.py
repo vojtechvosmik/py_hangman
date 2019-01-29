@@ -43,7 +43,7 @@ class HangMan:  # main hangman class
             return word_list
 
     @staticmethod
-    def get_attempt(): #TODO check number
+    def get_attempt():
         try:
             attempt = str(raw_input("Guess letter -> "))
             if len(attempt) == 1:
@@ -81,10 +81,10 @@ class HangMan:  # main hangman class
     def print_total_score():  # prints proc. score
         global totalWins
         global totalLoses
-        totalAttempts = totalWins + totalLoses
-        winsProc = (100 * totalWins) / totalAttempts
-        losesProc = 100 - winsProc
-        print("Wins: " + str(winsProc) + "% loses: " + str(losesProc) + "%")
+        total_attempts = totalWins + totalLoses
+        wins_proc = (100 * totalWins) / total_attempts
+        loses_proc = 100 - wins_proc
+        print("Wins: " + str(wins_proc) + "% loses: " + str(loses_proc) + "%")
 
     @staticmethod
     def pretty_print_progress(guessed_letters, word):  # prints word progress
@@ -128,7 +128,7 @@ class HangMan:  # main hangman class
                 print("You lost..")
                 print("The right word was: " + full_word)
                 totalLoses = totalLoses + 1
-                HangMan.print_total_score()  # TODO
+                HangMan.print_total_score()
                 HangMan.ask_play_again()
             if len(word) == 0:
                 print("You won..")
